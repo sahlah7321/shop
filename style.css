@@ -70,7 +70,10 @@ header {
   align-items: center;
   margin-left: 0;
 }
-
+header{
+  /* تثبيت الهيدر */
+  position: fixed!important;
+}
 header a, footer a {
   margin-left: 40px;
   text-decoration: none;
@@ -294,7 +297,6 @@ section .cards .card {
 .contact form button:hover {
   background: #525252;
 }
-
 footer {
   width: 100%;
   display: flex;
@@ -318,6 +320,8 @@ footer span {
 footer a {
   padding: 0;
 }
+
+/* product page */
 
 @media screen and (max-width: 860px) {
   .navbar .all-links {
@@ -382,6 +386,12 @@ footer a {
   footer a {
     height: 0;
   }
+  .homepage {
+ 
+    background-position: right 50%;
+    background-size: cover;
+  }
+  
 }
 
 @media screen and (max-width: 560px) {
@@ -420,3 +430,4 @@ footer a {
 .buy-button:hover {
   background-color: #1eb75d;
 }
+/* Products Page */
