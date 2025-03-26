@@ -82,7 +82,7 @@
       <!-- <p>Take a look at some of our memorable camping adventures.</p> -->
       <ul class="cards">
         <li class="card">
-          <img src="المنتجات/1.jpeg" alt="img">
+          <img src="المنتجات/1.jpeg" onclick="openPopup('اشتراك ادوبي','استفد من أحدث أدوات أدوبي الاحترافية، اشترك في الخطة المناسبة لك اليوم!','300')" alt="img">
           <h3>اشتراك ادوبي</h3>
           <p>استفد من أحدث أدوات أدوبي الاحترافية، اشترك في الخطة المناسبة لك اليوم!</p>
           <p class="price">السعر قبل الخصم: <del>700 ر.س</del></p>
@@ -158,9 +158,9 @@
           <div class="contact-details">
             <p><i class="fas fa-map-marker-alt"></i> تريم، اليمن</p>
             <p><i class="fas fa-envelope"></i> sahlah7321@gmail.com</p>
-            <p><i class="fas fa-phone"></i>+967 730505521</p>
+            <a title="قم بمراسلتنا على الواتساب" href="https://wa.me/967730505521?text="><p><i class="fas fa-phone"></i>+967 730505521</p></a>
             <p><i class="fas fa-clock"></i> .متاح دئماً</p>
-            <p><i class="fab fa-whatsapp"></i>https://chat.whatsapp.com/IjVxjhBfZgIEMGCxRFEhYT</p>
+            <a title="شرفنا بأنظمامك الى عائلتنا" href="https://chat.whatsapp.com/IjVxjhBfZgIEMGCxRFEhYT" target="_blank"><p><i class="fab fa-whatsapp"></i>https://chat.whatsapp.com/IjVxjhBfZgIEMGCxRFEhYT</p></a>
           </div>          
         </div>
         <div class="col form">
@@ -172,16 +172,112 @@
             <button type="submit" onclick="sendDataAndWhatsApp()">أرسل الآن .</button>          </form>
         </div>
       </div>
+      <img src="images/Pyment.jpg" title="طرق الدفع" width="100%" alt="طرق الدفع" class="payment-image"> 
     </section>
 
     <footer>
       <div>
-        <span>Copyright © 2023 All Rights Reserved</span>
+        <span>الحقوق محفوظة لدى سهلة للمنتجات الرقمية 2025</span>
         <span class="link">
-            <a href="#">Home</a>
-            <a href="#contact">Contact</a>
+            <a href="#">الرئيسية</a>
+            <a href="#contact">تواصل معنا</a>
         </span>
       </div>
     </footer>
+    <!-- py me -->
+         <!-- نافذة منبثقة لتفاصيل المنتج -------------------------------------------------------------------------->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+          <div class="popup-container">
+              <div class="popup-images">
+                  <img id="popupMainImage" src="" alt="الصورة الأساسية">
+                  <img id="popupSecondaryImage" src="" alt="الصورة الثانوية">
+              </div>
+              <div class="popup-details">
+                  <h2 id="popupProductName"></h2>
+                  <p id="popupProductDesc"></p>
+                  <p class="price" id="popupProductPrice"></p>
+                  <a id="popupWhatsappBtn" href="#" class="btn whatsapp">شراء عبر واتساب</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- ------------  script  -->
+    <script>
+      // فتح النافذة المنبثقة وعرض التفاصيل
+      function openPopup(name, desc, price, img1, img2) {
+            document.getElementById('popupProductName').innerText = name;
+            document.getElementById('popupProductDesc').innerText = desc;
+            document.getElementById('popupProductPrice').innerText = "السعر: " + price;
+            document.getElementById('popupMainImage').src = img1;
+            document.getElementById('popupSecondaryImage').src = img2;
+            document.getElementById('popupWhatsappBtn').href = `https://wa.me/1234567890?text=أرغب في شراء ${name}`;
+
+            document.getElementById('popup').style.display = "flex";
+        }
+
+        // إغلاق النافذة المنبثقة
+        function closePopup() {
+            document.getElementById('popup').style.display = "none";
+        }
+    </script>
+
+    <!-- ============ styles=========== -->
+
+    <style>
+      /* تصميم النافذة المنبثقة */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
+}
+
+.popup-container {
+    display: flex;
+    gap: 20px;
+}
+
+.popup-images {
+    width: 70%;
+}
+
+.popup-images img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.popup-details {
+    width: 30%;
+    padding: 20px;
+}
+
+    </style>
+
     </body>
 </html>
